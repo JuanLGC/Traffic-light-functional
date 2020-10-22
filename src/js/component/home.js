@@ -1,24 +1,17 @@
 import React from "react";
+import { Counter } from "./counter.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+var ticks = [100000, 10000, 1000];
 
-//create your first component
 export function Home() {
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+			<p>Dude, stop wasting your time looking at this</p>
+			<div className="text-center counter-box">
+				{ticks.map((tickers, index) => {
+					return <Counter key={index} tick={tickers} />;
+				})}
+			</div>
+		</>
 	);
 }
